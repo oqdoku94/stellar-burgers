@@ -8,9 +8,23 @@ import {
   TRegisterData,
   updateUserApi
 } from '@api';
+import { getCookie } from '../../utils/cookie';
 
-export const authUser = createAsyncThunk('auth/getUser', async () =>
-  getUserApi()
+export const authUser = createAsyncThunk(
+  'auth/getUser',
+  async (_, { rejectWithValue }) => {
+    if (!getCookie('accessToken')) {
+      return rejectWithValue(null);
+    }
+
+    const response = await getUserApi();
+
+    if (!response.success) {
+      return rejectWithValue(null);
+    }
+
+    return response;
+  }
 );
 
 export const registerUser = createAsyncThunk(
