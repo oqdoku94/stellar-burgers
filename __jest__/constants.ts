@@ -1,7 +1,3 @@
-import { TConstructorState } from '../src/services/slices/constructorSlice';
-import { TIngredient } from '../src/utils/types';
-import { TOrderState } from '../src/services/slices/orderSlice';
-
 export const uniqueidentifier = '27cf0371-b513-48a3-9416-2662b2e10277';
 
 export const newBun = {
@@ -34,7 +30,7 @@ export const newFilling = {
   __v: 0
 };
 
-export const moveIngredientFirstState: TConstructorState = {
+export const moveIngredientFirstState = {
   ingredients: [
     {
       _id: '643d69a5c3f7b9001cfa0941',
@@ -67,7 +63,7 @@ export const moveIngredientFirstState: TConstructorState = {
   ]
 };
 
-export const moveIngredientSecondState: TConstructorState = {
+export const moveIngredientSecondState = {
   ingredients: [
     {
       _id: '643d69a5c3f7b9001cfa093e',
@@ -100,7 +96,7 @@ export const moveIngredientSecondState: TConstructorState = {
   ]
 };
 
-export const ingredientStateBeforeRemove: TConstructorState = {
+export const ingredientStateBeforeRemove = {
   ingredients: [
     {
       _id: '643d69a5c3f7b9001cfa0941',
@@ -133,7 +129,7 @@ export const ingredientStateBeforeRemove: TConstructorState = {
   ]
 };
 
-export const ingredientStateAfterRemove: TConstructorState = {
+export const ingredientStateAfterRemove = {
   ingredients: [
     {
       _id: '643d69a5c3f7b9001cfa0941',
@@ -152,7 +148,7 @@ export const ingredientStateAfterRemove: TConstructorState = {
   ]
 };
 
-export const ingredientStateBeforeClear: TConstructorState = {
+export const ingredientStateBeforeClear = {
   ingredients: [
     {
       _id: '643d69a5c3f7b9001cfa0941',
@@ -185,7 +181,7 @@ export const ingredientStateBeforeClear: TConstructorState = {
   ]
 };
 
-export const ingredientStateAfterClear: TConstructorState = {
+export const ingredientStateAfterClear = {
   ingredients: []
 };
 
@@ -404,7 +400,7 @@ export const loadedIngredients = [
   }
 ];
 
-export const orderBeforeClearState: TOrderState = {
+export const orderBeforeClearState = {
   order: {
     ingredients: [
       '643d69a5c3f7b9001cfa093d',
@@ -1309,4 +1305,52 @@ export const ordersResponse = {
   ],
   total: 46075,
   totalToday: 113
+};
+
+export const userResponse = {
+  success: true,
+  user: { email: '0qd0ku94@gmail.com', name: 'Николай1' }
+};
+
+export const registerResponse = {
+  success: true,
+  user: {
+    email: 'misha@krup.ru',
+    name: 'Миша Крупин'
+  },
+  accessToken:
+    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OWE1ODJhMTE5ZDQ1MDAxYjRmYTA0OSIsImlhdCI6MTcyMTM5MTE0NiwiZXhwIjoxNzIxMzkyMzQ2fQ.yog-yyfScdQhhgJjoUyirQErYYL2GV3RlRCTVO8hd3Y',
+  refreshToken:
+    'dc351b0b8ca757bba7af9530e7db2717f931915b22a95e3cbef3b0cc5bf8ff6b547ef632ca58f21f'
+};
+
+export const registerErrorResponse = {
+  message: 'Ошибка при регистрации'
+};
+
+export const logoutResponse = { success: true, message: 'Successful logout' };
+
+export const loginErrorResponse = {
+  message: 'Ошибка при входе'
+};
+
+export const loginResponse = {
+  success: true,
+  accessToken:
+    'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OGVkNzgwMTE5ZDQ1MDAxYjRmN2UyMSIsImlhdCI6MTcyMTM5NDIxMywiZXhwIjoxNzIxMzk1NDEzfQ.-15flTT5jcxw2IwDCIGJmaF4rrfazwZ2p057pJViZw4',
+  refreshToken:
+    '2753b524718bf09ad0c8a3e532494bda454c8ed33d9de6a4347819f04a2df947ab205835dcabadff',
+  user: {
+    email: '0qd0ku94@gmail.com',
+    name: 'Николай1'
+  }
+};
+
+export const userUpdateErrorResponse = {
+  message: 'Ошибка при обновлении профиля пользователя'
+};
+
+export const userUpdateResponse = {
+  success: true,
+  user: { email: '0qd0ku94@gmail.com', name: 'Николай12' }
 };

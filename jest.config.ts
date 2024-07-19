@@ -207,7 +207,8 @@ const config: JestConfigWithTsJest = {
   },
   moduleNameMapper: {
     '^@api': '<rootDir>/src/utils/burger-api.ts'
-  }
+  },
+  testEnvironment: 'jsdom'
 };
 
 export default config;
