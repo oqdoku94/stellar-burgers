@@ -1,9 +1,12 @@
 import token from '../../fixtures/token.json';
 import { deleteCookie, setCookie } from '../../../src/utils/cookie';
 
+const ingredientSelector =
+  '[data-cy=ingredient_item_643d69a5c3f7b9001cfa0941] button';
+
 describe('Интеграционное тестирование страницы конструктора', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:4000');
+    cy.visit('/');
     cy.intercept('GET', 'api/ingredients', {
       fixture: 'ingredients.json'
     }).as('getIngredients');
@@ -11,9 +14,7 @@ describe('Интеграционное тестирование страницы
 
   describe('Тестирование добавления ингредиентов из списка в конструктор', () => {
     it('Добавление одного ингредиента', () => {
-      cy.get('[data-cy=ingredient_item_643d69a5c3f7b9001cfa0941] button')
-        .contains('Добавить')
-        .click();
+      cy.get(ingredientSelector).contains('Добавить').click();
 
       cy.get('[data-cy=constructor_item_643d69a5c3f7b9001cfa0941]').contains(
         'Биокотлета из марсианской Магнолии'
@@ -24,9 +25,7 @@ describe('Интеграционное тестирование страницы
         .contains('Добавить')
         .click();
 
-      cy.get('[data-cy=ingredient_item_643d69a5c3f7b9001cfa0941] button')
-        .contains('Добавить')
-        .click();
+      cy.get(ingredientSelector).contains('Добавить').click();
 
       cy.get('[data-cy=constructor_bun_item]').contains('Кастомная булка');
 
@@ -85,14 +84,13 @@ describe('Интеграционное тестирование страницы
       cy.get('[data-cy=ingredient_item_643d69a5c3f7b9001cfa093c] button')
         .contains('Добавить')
         .click();
-      cy.get('[data-cy=ingredient_item_643d69a5c3f7b9001cfa0941] button')
-        .contains('Добавить')
-        .click();
+      cy.get(ingredientSelector).contains('Добавить').click();
       cy.get('[data-cy=ingredient_item_643d69a5c3f7b9001cfa093e] button')
         .contains('Добавить')
         .click();
 
       cy.get('button').contains('Оформить заказ').click();
+      cy.wait('@postOrder');
 
       const modal = cy.get('div[data-cy=modal]').should('exist');
 
