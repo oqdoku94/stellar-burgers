@@ -1271,3 +1271,42 @@ export const feedResponse = {
   total: 46075,
   totalToday: 113
 };
+
+export const ordersResponse = {
+  success: true,
+  orders: [
+    {
+      _id: '668eda83119d45001b4f7e2c',
+      ingredients: ['643d69a5c3f7b9001cfa093c', '643d69a5c3f7b9001cfa093e'],
+      status: 'done',
+      name: 'Краторный люминесцентный бургер',
+      createdAt: '2024-07-10T19:01:23.378Z',
+      updatedAt: '2024-07-10T19:01:24.056Z',
+      number: 45391
+    },
+    {
+      _id: '668edb8a119d45001b4f7e33',
+      ingredients: ['643d69a5c3f7b9001cfa093c', '643d69a5c3f7b9001cfa093e'],
+      status: 'done',
+      name: 'Краторный люминесцентный бургер',
+      createdAt: '2024-07-10T19:05:46.602Z',
+      updatedAt: '2024-07-10T19:05:47.225Z',
+      number: 45392
+    },
+    {
+      _id: '668edbe8119d45001b4f7e37',
+      ingredients: [
+        '643d69a5c3f7b9001cfa093c',
+        '643d69a5c3f7b9001cfa093c',
+        '643d69a5c3f7b9001cfa093e'
+      ],
+      status: 'done',
+      name: 'Краторный люминесцентный бургер',
+      createdAt: '2024-07-10T19:07:20.113Z',
+      updatedAt: '2024-07-10T19:07:20.491Z',
+      number: 45393
+    }
+  ],
+  total: 46075,
+  totalToday: 113
+};
