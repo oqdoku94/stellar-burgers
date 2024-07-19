@@ -5,7 +5,6 @@
 
 import type { JestConfigWithTsJest } from 'ts-jest';
 
-
 const config: JestConfigWithTsJest = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
@@ -205,6 +204,9 @@ const config: JestConfigWithTsJest = {
         // настройки для ts-jest
       }
     ]
+  },
+  moduleNameMapper: {
+    '^@api': '<rootDir>/src/utils/burger-api.ts'
   }
 };
 
