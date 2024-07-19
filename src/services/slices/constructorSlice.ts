@@ -2,7 +2,7 @@ import { TConstructorIngredient, TIngredient } from '@utils-types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
-interface TConstructorState {
+export interface TConstructorState {
   bun?: TConstructorIngredient;
   ingredients: TConstructorIngredient[];
 }
@@ -12,7 +12,7 @@ interface TMovableConstructorIngredient {
   move: 'up' | 'down';
 }
 
-const initialState: TConstructorState = {
+export const initialState: TConstructorState = {
   ingredients: []
 };
 
