@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 import { TOrder } from '@utils-types';
 import { createOrder, loadOrderByNumber } from '../thunks/orderThunks';
 
-interface TOrderState {
+export interface TOrderState {
   order: TOrder | null;
   isLoading: boolean;
 }
 
-const initialState: TOrderState = {
+export const initialState: TOrderState = {
   order: null,
   isLoading: false
 };

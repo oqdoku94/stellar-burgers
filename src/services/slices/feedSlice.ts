@@ -8,7 +8,7 @@ interface TFeedState {
   totalToday: number;
 }
 
-const initialState: TFeedState = {
+export const initialState: TFeedState = {
   orders: [],
   total: 0,
   totalToday: 0
@@ -25,13 +25,11 @@ const feedSlice = createSlice({
   },
   reducers: {},
   extraReducers: (builder) => {
-    builder
-      .addCase(loadFeed.pending, (state) => (state = initialState))
-      .addCase(loadFeed.fulfilled, (state, action) => {
-        state.orders = action.payload.orders;
-        state.total = action.payload.total;
-        state.totalToday = action.payload.totalToday;
-      });
+    builder.addCase(loadFeed.fulfilled, (state, action) => {
+      state.orders = action.payload.orders;
+      state.total = action.payload.total;
+      state.totalToday = action.payload.totalToday;
+    });
   }
 });
 

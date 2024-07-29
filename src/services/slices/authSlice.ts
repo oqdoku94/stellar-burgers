@@ -18,7 +18,7 @@ interface TAuthState {
   updateError?: string;
 }
 
-const initialState: TAuthState = {
+export const initialState: TAuthState = {
   isLoading: false,
   isAuthChecked: false,
   userData: null

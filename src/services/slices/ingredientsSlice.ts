@@ -5,10 +5,9 @@ import { loadIngredients } from '../thunks/ingredientsThunks';
 interface TIngredientState {
   isLoading: boolean;
   ingredients: TIngredient[];
-  error?: string;
 }
 
-const initialState: TIngredientState = {
+export const initialState: TIngredientState = {
   ingredients: [],
   isLoading: true
 };
